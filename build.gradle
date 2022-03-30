@@ -33,6 +33,28 @@ configurations {
     developmentOnly
     runtimeClasspath {
         extendsFrom developmentOnly
+        // Exclude micronaut-spring
+        exclude group: 'io.micronaut', module: 'micronaut-bom'
+        // Excludes from grails-core
+        exclude group: 'org.apache.ant'
+        exclude group: 'jline'
+        exclude group: 'org.fusesource.jansi', module: 'jansi'
+        // Exclude from cache -> gpars -> groovy-all
+        exclude group: 'org.codehaus.jsr166-mirror', module: 'jsr166y'
+        exclude group: 'org.codehaus.groovy', module: 'groovy-all'
+        exclude group: 'junit'
+        exclude group: 'org.junit.jupiter'
+        exclude group: 'org.junit.platform'
+        // Excludes from database-migration
+        exclude group: 'org.grails', module: 'grails-shell'
+        // Excludes from org.grails.plugins:cache
+        exclude group: 'gradle.plugin.com.github.erdi.webdriver-binaries'
+        // Excludes from grails-core
+        // exclude group: 'org.grails', module: 'grails-datastore-core'
+        // Excludes from grails-web-boot
+        exclude group: 'org.grails', module: 'grails-databinding'
+        exclude group: 'org.grails', module: 'grails-encoder'
+        exclude group: 'org.grails', module: 'grails-gsp'
     }
 }
 
@@ -41,7 +63,7 @@ dependencies {
     // compileOnly "io.micronaut:micronaut-inject-groovy"
     console "org.grails:grails-console"
     implementation "org.springframework.boot:spring-boot-starter-logging"
-    implementation "org.springframework.boot:spring-boot-starter-validation"
+    // implementation "org.springframework.boot:spring-boot-starter-validation"
     implementation "org.springframework.boot:spring-boot-autoconfigure"
     implementation "org.grails:grails-core"
     implementation "org.springframework.boot:spring-boot-starter-actuator"
@@ -63,10 +85,10 @@ dependencies {
     // implementation "org.grails.plugins:events"
     // implementation "org.grails.plugins:gsp"
     profile "org.grails.profiles:web"
-    runtimeOnly "org.glassfish.web:el-impl:2.2.1-b05"
-    runtimeOnly "com.h2database:h2"
-    runtimeOnly "org.apache.tomcat:tomcat-jdbc"
-    runtimeOnly "javax.xml.bind:jaxb-api:2.3.1"
+    // runtimeOnly "org.glassfish.web:el-impl:2.2.1-b05"
+    // runtimeOnly "com.h2database:h2"
+    // runtimeOnly "org.apache.tomcat:tomcat-jdbc"
+    // runtimeOnly "javax.xml.bind:jaxb-api:2.3.1"
     // runtimeOnly "com.bertramlabs.plugins:asset-pipeline-grails:3.3.4"
     // testImplementation "io.micronaut:micronaut-inject-groovy"
     // testImplementation "org.grails:grails-gorm-testing-support"
