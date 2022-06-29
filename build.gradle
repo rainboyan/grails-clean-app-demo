@@ -69,7 +69,7 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-actuator"
     implementation "org.springframework.boot:spring-boot-starter-web"
     implementation "org.springframework.boot:spring-boot-starter-tomcat"
-    implementation "org.grails:grails-web-boot"
+    implementation "org.grails:grails-boot"
     // implementation "org.grails:grails-logging"
     // implementation "org.grails:grails-plugin-rest"
     // implementation "org.grails:grails-plugin-databinding"
