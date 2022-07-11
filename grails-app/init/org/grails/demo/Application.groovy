@@ -4,11 +4,18 @@ import grails.boot.GrailsApp
 import grails.boot.config.GrailsAutoConfiguration
 
 import groovy.transform.CompileStatic
+import org.springframework.boot.SpringBootConfiguration
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.boot.context.metrics.buffering.BufferingApplicationStartup
 
 @CompileStatic
-@ComponentScan
+@SpringBootApplication(
+        exclude=[SqlInitializationAutoConfiguration],
+        scanBasePackages=["org.grails.demo"]
+)
 class Application extends GrailsAutoConfiguration {
     static void main(String[] args) {
          def now = System.currentTimeMillis()
